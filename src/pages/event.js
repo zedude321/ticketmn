@@ -1,11 +1,11 @@
 import Footer from "@/components/footer";
 import Header from "@/components/header";
 
-export default function Home() {
+export default function Event() {
   return (
     <div>
       <Header />
-      Home page
+      Event
       <Footer />
     </div>
   );
