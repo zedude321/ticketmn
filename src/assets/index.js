@@ -5,3 +5,7 @@ export * from "./eye-icon";
 export * from "./eye-hide-icon";
 export * from "./location-icon";
 export * from "./calendar-icon";
+export * from "./train-icon";
+export * from "./up-down-arrow-icon";
+export * from "./down-arrow-icon";
+export * from "./clock-icon";
