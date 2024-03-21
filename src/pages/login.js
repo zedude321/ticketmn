@@ -6,7 +6,6 @@ import { useRouter } from "next/navigation";
 import React, { useState } from "react";
 
 export default function Login() {
-  const inputWidth = "35vw";
   const router = useRouter();
   const [tab, setTab] = useState("login");
   const [email, setEmail] = useState("");
@@ -55,7 +54,7 @@ export default function Login() {
                   clearButton
                   setValue={setEmail}
                   value={email}
-                  className={`w-[${inputWidth}]`}
+                  className={`w-[35vw]`}
                   placeholder="Энд бичнэ үү"
                 />
                 {step > 0 && (
@@ -65,7 +64,7 @@ export default function Login() {
                       type="password"
                       setValue={setPassword}
                       value={password}
-                      className={`w-[${inputWidth}]`}
+                      className={`w-[35vw]`}
                     />
                   </>
                 )}
@@ -109,7 +108,7 @@ export default function Login() {
                   clearButton
                   setValue={setEmail}
                   value={email}
-                  className={`w-[${inputWidth}]`}
+                  className={`w-[35vw]`}
                   placeholder="Энд бичнэ үү"
                 />
                 {step > 0 && (
@@ -123,7 +122,7 @@ export default function Login() {
                     <Input
                       setValue={setConfirmCode}
                       value={confirmCode}
-                      className={`w-[${inputWidth}]`}
+                      className={`w-[35vw]`}
                       placeholder="XXXXXX"
                     />
                   </>
@@ -135,7 +134,7 @@ export default function Login() {
                       type="password"
                       setValue={setPassword}
                       value={password}
-                      className={`w-[${inputWidth}]`}
+                      className={`w-[35vw]`}
                     />
                   </>
                 )}
