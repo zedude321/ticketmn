@@ -4,7 +4,7 @@ export default function Card({ data, onPress }) {
   return (
     <div
       onClick={onPress}
-      className="w-1/4 cursor-pointer overflow-hidden rounded-lg border"
+      className="w-full cursor-pointer overflow-hidden rounded-lg border h-fit"
     >
       <img alt="title" src={data.img} />
       <div className="flex flex-col gap-3 p-2 text-sm text-black">
@@ -14,10 +14,10 @@ export default function Card({ data, onPress }) {
             <LocationIcon />
             <span>{data.location}</span>
           </div>
-          <div className="flex items-center gap-1 text-gray-500">
+          {data.type != 'museum' && <div className="flex items-center gap-1 text-gray-500">
             <CalendarIcon />
             <span>{data.date}</span>
-          </div>
+          </div>}
         </div>
         <button className="w-2/3 rounded-xl bg-orange-600 py-2 text-xs text-white">
           ТАСАЛБАР АВАХ
