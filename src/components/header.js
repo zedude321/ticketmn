@@ -1,40 +1,47 @@
+import { useRouter } from "next/navigation";
+
 export default function Header() {
+  const router = useRouter();
+
   return (
     <div>
-      <div className="flex justify-end bg-gray-100 py-2 pr-5 gap-2">
+      <div className="flex items-center justify-end gap-2 bg-gray-100 py-2 pr-5 text-xs">
         <img
-          className="w-5 h-5"
+          className="h-3 w-3"
           src="https://uxwing.com/wp-content/themes/uxwing/download/communication-chat-call/phone-ringing-icon.png"
         ></img>
         <p className="flex justify-center text-black "> 1900-1800</p>
         <img
-          className="w-5 h-5"
+          className="h-3 w-3"
           src="https://www.logo.wine/a/logo/Facebook/Facebook-f_Logo-Grey-Logo.wine.svg"
         ></img>
         <img
-          className="w-5 h-5"
+          className="h-3 w-3"
           src="https://www.svgrepo.com/show/30539/instagram-logo.svg"
         ></img>
         <img
-          className="w-5 h-5"
+          className="h-3 w-3"
           src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/Antu_im-twitter.svg/1024px-Antu_im-twitter.svg.png"
         ></img>
         <img
-          className="w-5 h-5"
+          className="h-3 w-3"
           src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ497HhSEJP0AX6D_pVmTBgKYR0HZVbVFpuE9KFC5364udRe6CfakviOjEf8gP3mOdsMr0&usqp=CAU"
         ></img>
         <img
-          className="w-5 h-5"
+          className="h-3 w-3"
           src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGi2LnYEuZio1dtQfbZUosD1JrfvfJs1NJAp7FP6UhrhjRw5cfIuh5A84oap-04Rzao6s&usqp=CAU"
         ></img>
       </div>
-      <div className="bg-white flex justify-between items-center">
+      <div className="flex items-center justify-between bg-white">
         <img
           className=" h-16 pl-6   "
           src="https://m.zangia.mn/l/f/7/SW-NQPH0LF-2FLSLAD-L50DK2L-A4.jpg"
         ></img>
-        <div className="flex justify-center ml-6 gap-6 p-4">
-          <div className="flex flex-col items-center">
+        <div className="ml-6 flex justify-center gap-6 p-4">
+          <div
+            onClick={() => router.push("/")}
+            className="flex cursor-pointer flex-col items-center"
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"
@@ -51,9 +58,15 @@ export default function Header() {
               <path d="M13.192 9h6.616a2 2 0 011.992 2.183l-.567 6.182A4 4 0 0117.25 21h-1.5a4 4 0 01-3.983-3.635l-.567-6.182A2 2 0 0113.192 9zM15 13h.01M18 13h.01M15 16.5c1 .667 2 .667 3 0M8.632 15.982A4.037 4.037 0 018.25 16h-1.5a4 4 0 01-3.983-3.635L2.2 6.183A2 2 0 014.192 4h6.616a2 2 0 012 2M6 8h.01M9 8h.01M6 12c.764-.51 1.528-.63 2.291-.36"></path>
             </svg>
 
-            <p className="flex justify-center items-center text-gray-700 "> Үзвэр </p>
+            <p className="flex items-center justify-center text-gray-700 ">
+              {" "}
+              Үзвэр{" "}
+            </p>
           </div>
-          <div className="flex flex-col items-center">
+          <div
+            onClick={() => router.push("/")}
+            className="flex cursor-pointer flex-col items-center"
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"
@@ -79,7 +92,10 @@ export default function Header() {
 
             <p className="flex justify-center text-gray-700"> Музей </p>
           </div>
-          <div className="flex flex-col items-center">
+          <div
+            onClick={() => router.push("/train")}
+            className="flex cursor-pointer flex-col items-center"
+          >
             <svg
               xmlns="http://www.w3.org/2000/9svg"
               width="26"
@@ -113,24 +129,27 @@ export default function Header() {
             <p className="flex justify-center text-gray-700"> Галт тэрэг </p>
           </div>
         </div>
-        
-        <button className="flex justify-center items-center rounded-md border p-10 py-2 text-lg text-orange-600 mr-6" >
-        <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      fill="none"
-      stroke="currentColor"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      strokeWidth="2"
-      className="icon icon-tabler icon-tabler-user"
-      viewBox="0 0 24 24"
-    >
-      <path stroke="none" d="M0 0h24v24H0z"></path>
-      <circle cx="12" cy="7" r="4"></circle>
-      <path d="M6 21v-2a4 4 0 014-4h4a4 4 0 014 4v2"></path>
-    </svg>
+
+        <button
+          onClick={() => router.push("/login")}
+          className="mr-6 flex items-center justify-center rounded-md border p-10 py-2 text-lg text-orange-600"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            fill="none"
+            stroke="currentColor"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="2"
+            className="icon icon-tabler icon-tabler-user"
+            viewBox="0 0 24 24"
+          >
+            <path stroke="none" d="M0 0h24v24H0z"></path>
+            <circle cx="12" cy="7" r="4"></circle>
+            <path d="M6 21v-2a4 4 0 014-4h4a4 4 0 014 4v2"></path>
+          </svg>
           Нэвтрэх
         </button>
       </div>
