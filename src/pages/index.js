@@ -1,55 +1,27 @@
 import Card from "@/components/card";
+import Carousel from "@/components/carousel";
 import Footer from "@/components/footer";
 import Header from "@/components/header";
-import { allPosts } from '@/data/posts'
+import { allPosts } from "@/data/posts";
 import { useState } from "react";
 
 export default function Home() {
-  const [type, setType]= useState ('all')
+  const [type, setType] = useState("all");
   return (
     <div>
       <Header />
-
-      <div className="w-full h-[480px] flex bg-white justify-between">
-        <div className="flex items-center justify-center rotate-180">
-          <svg
-            className=" h-12 w-12 flex text-blue-600"
-            width="800"
-            height="800"
-            version="1.1"
-            viewBox="0 0 330 330"
-            xmlSpace="preserve"
-          >
-            <path
-              fill="currentColor"
-              d="M250.606 154.389l-150-149.996c-5.857-5.858-15.355-5.858-21.213.001-5.857 5.858-5.857 15.355.001 21.213l139.393 139.39L79.393 304.394c-5.857 5.858-5.857 15.355.001 21.213C82.322 328.536 86.161 330 90 330s7.678-1.464 10.607-4.394l149.999-150.004a14.996 14.996 0 000-21.213z"
-            ></path>
-          </svg>
-        </div>
-        <img
-          className=""
-          src="https://www.ticket.mn/files/concerts/images/429566295_399577389345731_5684644093092135955_n_KOtkWaR.webp"
-          alt=""
-        ></img>
-        <div className="flex items-center justify-center">
-          <svg
-            className=" h-12 w-12 flex text-blue-600"
-            width="800"
-            height="800"
-            version="1.1"
-            viewBox="0 0 330 330"
-            xmlSpace="preserve"
-          >
-            <path
-              fill="currentColor"
-              d="M250.606 154.389l-150-149.996c-5.857-5.858-15.355-5.858-21.213.001-5.857 5.858-5.857 15.355.001 21.213l139.393 139.39L79.393 304.394c-5.857 5.858-5.857 15.355.001 21.213C82.322 328.536 86.161 330 90 330s7.678-1.464 10.607-4.394l149.999-150.004a14.996 14.996 0 000-21.213z"
-            ></path>
-          </svg>
-        </div>
-      </div>
-      <div className="bg-white flex justify-between">
-        <div className="text-black flex justify-between w-full mt-4 ml-2 text-orange-600">
-          <div className="text-xl flex items-center gap-2">
+      <Carousel
+        images={[
+          "https://www.ticket.mn/files/concerts/images/Untitled_design_-_2024-02-14T115138.769_4QZ6eOI.webp",
+          "https://www.ticket.mn/files/concerts/images/kleopatra_main_poster_landscape_Ticket_EjMFvFw.webp",
+          "https://www.ticket.mn/files/concerts/images/Untitled-1984_Q6enllp.webp",
+          "https://www.ticket.mn/files/concerts/images/Untitled_design_14_GHwawOV.webp",
+          "https://www.ticket.mn/files/concerts/images/cover_1_1J48Vwn.webp",
+        ]}
+      />
+      <div className="flex justify-between bg-white">
+        <div className="ml-2 mt-4 flex w-full justify-between text-black text-orange-600">
+          <div className="flex items-center gap-2 text-xl">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="29"
@@ -72,11 +44,11 @@ export default function Home() {
             </svg>
             Үзвэр
           </div>
-          <div className="flex gap-4 items-start text-black mt-4 mr-8 text-sm">
-            <button className="border bg-orange-600 rounded-md w-16 h-8 text-white">
+          <div className="mr-8 mt-4 flex items-start gap-4 text-sm text-black">
+            <button className="h-8 w-16 rounded-md border bg-orange-600 text-white">
               Бүгд
             </button>
-            <button className="border rounded-md w-40 h-8 flex gap-2 justify-center items-center">
+            <button className="flex h-8 w-40 items-center justify-center gap-2 rounded-md border">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="14"
@@ -104,8 +76,11 @@ export default function Home() {
         </div>
         <div></div>
       </div>
-      <div className="bg-white  flex gap-[30px] text-slate-600">
-        <button onClick={() => setType('all')} className="flex ml-[10px] mt-8 gap-2 items-center border bg-slate-200 w-24 justify-center h-[30px] rounded-md">
+      <div className="flex  gap-[30px] bg-white text-slate-600">
+        <button
+          onClick={() => setType("all")}
+          className="ml-[10px] mt-8 flex h-[30px] w-24 items-center justify-center gap-2 rounded-md border bg-slate-200"
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="15"
@@ -122,7 +97,10 @@ export default function Home() {
           </svg>
           Бүгд
         </button>
-        <button onClick={() => setType('concert')} className="flex mt-8 items-center ">
+        <button
+          onClick={() => setType("concert")}
+          className="mt-8 flex items-center "
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="17"
@@ -137,7 +115,10 @@ export default function Home() {
           </svg>
           Концерт
         </button>
-        <button onClick={() => setType('play')} className="flex mt-8 items-center ">
+        <button
+          onClick={() => setType("play")}
+          className="mt-8 flex items-center "
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="18"
@@ -152,7 +133,10 @@ export default function Home() {
           </svg>
           Жүжиг
         </button>
-        <button onClick={() => setType('music')} className="flex mt-8 items-center ">
+        <button
+          onClick={() => setType("music")}
+          className="mt-8 flex items-center "
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="19"
@@ -175,7 +159,10 @@ export default function Home() {
           </svg>
           Дуурь
         </button>
-        <button onClick={() => setType('ballet')} className="flex mt-8 items-center ">
+        <button
+          onClick={() => setType("ballet")}
+          className="mt-8 flex items-center "
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="19"
@@ -194,7 +181,10 @@ export default function Home() {
           </svg>
           Балет
         </button>
-        <button onClick={() => setType('sport')} className="flex mt-8 items-center ">
+        <button
+          onClick={() => setType("sport")}
+          className="mt-8 flex items-center "
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="16"
@@ -209,7 +199,10 @@ export default function Home() {
           </svg>
           Спорт
         </button>
-        <button onClick={() => setType('other')} className="flex mt-8 items-center ">
+        <button
+          onClick={() => setType("other")}
+          className="mt-8 flex items-center "
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="16"
@@ -225,11 +218,12 @@ export default function Home() {
           Бусад
         </button>
       </div>
-      <div className="grid grid-cols-4 gap-4 mt-4 p-2">
+      <div className="mt-4 grid grid-cols-4 gap-4 p-2">
         {allPosts.map((e, i) => {
-          return (type == 'all' || e.type == type) && <Card key={i} data={e} />
+          return (type == "all" || e.type == type) && <Card key={i} data={e} />;
         })}
       </div>
+      <Footer />
     </div>
   );
 }
