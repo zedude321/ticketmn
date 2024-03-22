@@ -1,21 +1,23 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const Carousel = ({ images }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [curImage, setCurImage] = useState(images[0]);
 
+  useEffect(() => {
+    setCurImage(images[currentIndex]);
+  }, [currentIndex, images])
+
   const nextSlide = () => {
     setCurrentIndex((prevIndex) =>
       prevIndex === images.length - 1 ? 0 : prevIndex + 1,
     );
-    setCurImage(images[currentIndex]);
   };
 
   const prevSlide = () => {
     setCurrentIndex((prevIndex) =>
       prevIndex === 0 ? images.length - 1 : prevIndex - 1,
     );
-    setCurImage(images[currentIndex]);
   };
 
   return (
