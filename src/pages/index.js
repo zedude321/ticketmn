@@ -12,6 +12,9 @@ export default function Home() {
       <Header />
       <Carousel
         images={[
+          "https://www.ticket.mn/files/concerts/images/Untitled_design_-_2024-02-14T115138.769_4QZ6eOI.webp",
+          "https://www.ticket.mn/files/concerts/images/kleopatra_main_poster_landscape_Ticket_EjMFvFw.webp",
+          "https://www.ticket.mn/files/concerts/images/Untitled-1984_Q6enllp.webp",
           "https://www.ticket.mn/files/concerts/images/Untitled_design_14_GHwawOV.webp",
           "https://www.ticket.mn/files/concerts/images/cover_1_1J48Vwn.webp",
         ]}

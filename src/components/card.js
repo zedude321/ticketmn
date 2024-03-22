@@ -22,9 +22,16 @@ export default function Card({ data, onPress }) {
               </div>
             )}
           </div>
-          {data.type && (
+          {data.type == "museum" && (
             <button
-              className={`w-2/3 rounded-xl bg-${data.type != "museum" ? "orange-600" : "green-500"} py-2 text-xs text-white`}
+              className={`w-2/3 rounded-xl bg-green-500 py-2 text-xs text-white`}
+            >
+              ТАСАЛБАР АВАХ
+            </button>
+          )}
+          {data.type != "museum" && (
+            <button
+              className={`w-2/3 rounded-xl bg-orange-600 py-2 text-xs text-white`}
             >
               ТАСАЛБАР АВАХ
             </button>
