@@ -3,10 +3,13 @@ import Carousel from "@/components/carousel";
 import Footer from "@/components/footer";
 import Header from "@/components/header";
 import { allPosts } from "@/data/posts";
+import { useRouter } from "next/navigation";
 import { useState } from "react";
 
 export default function Home() {
+  const router = useRouter();
   const [type, setType] = useState("all");
+
   return (
     <div>
       <Header />
@@ -220,7 +223,11 @@ export default function Home() {
       </div>
       <div className="mt-4 grid grid-cols-4 gap-4 p-2">
         {allPosts.map((e, i) => {
-          return (type == "all" || e.type == type) && <Card key={i} data={e} />;
+          return (
+            (type == "all" || e.type == type) && (
+              <Card onPress={() => router.push("/event")} key={i} data={e} />
+            )
+          );
         })}
       </div>
       <Footer />
